@@ -5,12 +5,13 @@
   src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1.1','packages':['sankey']}]}">
 </script>
 </head>
+
 <body>
-<h1>NYS Thruway Car Patterns</h1>
-<p>This diagram shows the relative volumes of passenger cars through each entry and exit on the NYS Thruway.<p>
-<p>The <a href="https://data.ny.gov/d/tw9e-7nms">source data</a> includes multiple <a href="http://www.thruway.ny.gov/travelers/tolls/classes.html">vehicle classes</a>; I used class 2L which should reasonably represent passenger cars, and selected only data from 2012.</p>
-<p>I used <a href="https://developers.google.com/chart/interactive/docs/gallery/sankey">Google Charts Sankey Diagram</a> to render the data.
-<p>To do: get the data to load from the data source dynamically.</p>
+<h1>New York State Thruway Car Patterns</h1>
+<p>This diagram shows the relative volumes of passenger cars through each <a href="http://www.thruway.ny.gov/travelers/interchanges/index.html">entry and exit</a> on the NYS Thruway.<p>
+<p>The <a href="https://data.ny.gov/d/tw9e-7nms">source data</a> includes multiple <a href="http://www.thruway.ny.gov/travelers/tolls/classes.html">vehicle classes</a> and years; I used class 2L which should reasonably represent passenger cars, and selected only data from 2012.</p>
+<p><a href="https://developers.google.com/chart/interactive/docs/gallery/sankey">Google Charts Sankey Diagram</a> renders the data, but there is a D3 plugin .
+<p><i>To do: get the data to load from the data source dynamically; for now the data is included statically with this page.</i></p>
 <div id="sankey_basic" style="width: 80%; height: 160%;"></div>
 
 <script type="text/javascript">
