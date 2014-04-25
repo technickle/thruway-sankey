@@ -8,8 +8,6 @@ body {
 
 .chord path {
   fill-opacity: .67;
-  stroke: #000;
-  stroke-width: .5px;
 }
 
 </style>
@@ -17,7 +15,6 @@ body {
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
-// From http://mkweb.bcgsc.ca/circos/guide/tables/
 var matrix = [
 [3001,6545,2188818,565180,604481,227479,239833,23996,670389,1063364,163523,8596,45960,10933,6686,18522,67138,7400,8434,2911,1650,2938,732,649,831,554,1342,1029,837,517,9653,2050,180,545,1895,28271,0,0,0,0,0,0,0,32708,29241,7153,8878,511,0,35143,5172,81596],
 [408,609,505566,111576,77802,21241,19429,1931,47374,84478,10799,522,3069,605,412,1140,4070,386,688,270,131,231,63,51,67,60,73,66,66,55,619,109,15,43,163,1585,0,0,0,0,0,0,0,2518,1799,429,739,41,0,2769,257,4744],
@@ -74,12 +71,12 @@ var matrix = [
 ];
 
 var chord = d3.layout.chord()
-    .padding(.05)
+    .padding(.02)
     .sortSubgroups(d3.descending)
     .matrix(matrix);
 
-var width = 960,
-    height = 500,
+var width = 1024,
+    height = 1024,
     innerRadius = Math.min(width, height) * .41,
     outerRadius = innerRadius * 1.1;
 
