@@ -84,7 +84,7 @@ d3.csv("thruway-exits.csv", function(cities) {
 
     // Add a mouseover title.
     group.append("title").text(function(d, i) {
-      return cities[i].name + ": " + formatPercent(d.value) + " of origins";
+      return cities[i].name;
     });
 
     // Add the group arc.
@@ -118,10 +118,10 @@ d3.csv("thruway-exits.csv", function(cities) {
     chord.append("title").text(function(d) {
       return cities[d.source.index].name
           + " → " + cities[d.target.index].name
-          + ": " + formatPercent(d.source.value)
+          + ": " + d.source.value
           + "\n" + cities[d.target.index].name
           + " → " + cities[d.source.index].name
-          + ": " + formatPercent(d.target.value);
+          + ": " + d.target.value;
     });
 
     function mouseover(d, i) {
@@ -136,6 +136,6 @@ d3.csv("thruway-exits.csv", function(cities) {
 </script>
 
 <footer>
-  <aside>January 9, 2012</aside>
-  <a href="../" rel="author">Mike Bostock</a>
+  <aside>April 25, 2014</aside>
+  <a href="../" rel="author">Andrew Nicklin</a>
 </footer>
