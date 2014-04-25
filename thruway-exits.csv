@@ -1,0 +1,68 @@
+Exit,Name,Segment,Color
+15,New Jersey - I-287 - NJ Route 17 South,1,#FF0000
+16,Harriman - US Route 6 - NY Route 17,1,#FF0000
+17,Newburgh - Scranton - I-84 - NY Routes 17K & 300,1,#FF0000
+18,New Paltz - Poughkeepsie - NY Route 299,1,#FF0000
+19,Kingston - NY Route 28 - Kingston-Rhinecliff Bridge,1,#FF0000
+20,Saugerties - Woodstock - NY Route 32,1,#FF0000
+21,Catskill - Cairo - NY Route 23,1,#FF0000
+22,Selkirk - NY Routes 144 & 396,1,#FF0000
+23,Albany (Downtown) - Troy - Rensselaer - I-787 - US Route 9W,1,#FF0000
+24,Albany - Montreal - I-90 East - I-87 North,2,#00FF00
+25,Schenectady - I-890 - NY Routes 7 & 146,2,#00FF00
+26,Schenectady - Scotia - I-890 - NY Routes 5 & 5S,2,#00FF00
+27,Amsterdam - NY Route 30,2,#00FF00
+28,Fultonville - Fonda - NY Route 30A,2,#00FF00
+29,Canajoharie - Sharon Springs - NY Route 10,2,#00FF00
+30,Herkimer - Mohawk - NY Route 28,2,#00FF00
+31,Utica - I-790 - NY Routes 8 & 12,2,#00FF00
+32,Westmoreland - Rome - NY Route 233,2,#00FF00
+33,Verona - Rome - Oneida - NY Route 365,2,#00FF00
+34,Canastota - Oneida - Chittenango - NY Route 13,2,#00FF00
+35,Syracuse - East Syracuse - NY Route 298,2,#00FF00
+36,Watertown - Binghamton - I-81,2,#00FF00
+37,Syracuse - Liverpool - Electronics Parkway,2,#00FF00
+38,Syracuse - Liverpool - County Route 57,2,#00FF00
+39,Syracuse - Fulton - I-690 - NY Route 690,3,#0000FF
+40,Weedsport - Auburn - NY Route 34,3,#0000FF
+41,Waterloo - Clyde - NY Route 414,3,#0000FF
+42,Geneva - Lyons - NY Route 14,3,#0000FF
+43,Manchester - Palmyra - NY Route 21,3,#0000FF
+44,Canandaigua - Victor - NY Route 332,3,#0000FF
+45,Rochester - Victor - I-490,4,#7F0000
+46,Rochester - Corning - I-390,4,#7F0000
+47,Rochester - LeRoy - I-490 - NY Route 19,4,#7F0000
+48,Batavia - NY Route 98,4,#7F0000
+49,Depew - Lockport - NY Route 78,4,#7F0000
+50,Williamsville Toll Barrier,4,#7F0000
+55,Lackawanna Toll Barrier,5,#007F00
+56,Blasdell - Orchard Park - Mile Strip Road (NY Route 179),5,#007F00
+57,Hamburg - East Aurora - NY Route 75,5,#007F00
+58,"Silver Creek - Irving - NY Routes 5, 20 & 438",5,#007F00
+59,Dunkirk - Fredonia - NY Route 60,5,#007F00
+60,Westfield - Mayville - NY Route 394,5,#007F00
+61,Ripley Toll Barrier,5,#007F00
+21B,Coxsackie - Ravena - US Route 9W - NY Route 81,1,#FF0000
+25A,Schenectady - Binghamton - I-88 - NY Route 7,2,#00FF00
+29A,Little Falls - Dolgeville - NY Route 169,2,#00FF00
+34A,Syracuse - Chittenango - Oswego - I-481,2,#00FF00
+48A,Pembroke - Medina - NY Route 77,4,#7F0000
+57A,Eden -  Angola,5,#007F00
+B1,Albany - Hudson - Rensselaer - I-90 - US Route 9,6,#00007F
+B2,Taconic State Parkway - NY Route 295,6,#00007F
+B3,Canaan Toll Barrier ,6,#00007F
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
+,,,
