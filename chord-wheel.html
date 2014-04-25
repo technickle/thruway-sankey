@@ -98,7 +98,7 @@ svg.append("g").selectAll("path")
     .attr("d", d3.svg.arc().innerRadius(innerRadius).outerRadius(outerRadius))
     .on("mouseover", fade(.1))
     .on("mouseout", fade(1));
-
+/*
 var ticks = svg.append("g").selectAll("g")
     .data(chord.groups)
   .enter().append("g").selectAll("g")
@@ -122,6 +122,7 @@ ticks.append("text")
     .attr("transform", function(d) { return d.angle > Math.PI ? "rotate(180)translate(-16)" : null; })
     .style("text-anchor", function(d) { return d.angle > Math.PI ? "end" : null; })
     .text(function(d) { return d.label; });
+*/
 
 svg.append("g")
     .attr("class", "chord")
