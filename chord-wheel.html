@@ -54,7 +54,7 @@ var svg = d3.select("body").append("svg")
 svg.append("circle")
     .attr("r", outerRadius);
 
-d3.json("thruway-2L-matrix.json", function(matrix) {
+d3.json("thruway-2l-matrix.json", function(matrix) {
   d3.csv("thruway-exits.csv", function(exits) {
     console.log(exits);
     layout.matrix(matrix);
