@@ -5,6 +5,8 @@
   <style>
     body {
       font: 10px sans-serif;
+      background:#000;
+      text-align:center;
     }
 
     #circle circle {
@@ -12,19 +14,15 @@
       pointer-events: all;
     }
 
-    .group path {
-      fill-opacity: .4;
-    }
 
     path.chord {
-      fill-opacity: .65
-      stroke: #000;
-      stroke-width: .25px;
     }
 
-    #circle:hover path.fade {
-      display: none;
+    .outer:hover {
+      cursor:pointer;
     }
+
+
   </style>
 </head>
 <body>
@@ -53,6 +51,8 @@ var svg = d3.select("body").append("svg")
     .attr("id", "circle")
     .attr("transform","translate(" + width / 2 + "," + height / 2 + ")");
 
+var colors = ['rgb(141,211,199)','rgb(255,255,179)','rgb(190,186,218)','rgb(251,128,114)','rgb(128,177,211)','rgb(253,180,98)'];
+
 svg.append("circle")
     .attr("r", outerRadius);
 
@@ -64,15 +64,17 @@ d3.json("thruway-2l-matrix.json", function(matrix) {
       .data(layout.groups)
       .enter().append("g")
         .classed({'group':true})
-        .on("mouseover",mouseover);
+        .on("mouseover",mouseover)
+        .on("mouseout",mouseout);
       
     // group title would go here
     group.append("title").text("replace me!");
   
     var groupPath = group.append("path")
         .attr("id", function(d,i) { return "group" + i; })
+        .attr("class","outer")
         .attr("d", arc)
-        .style("fill", function(d,i) { return exits[i].color; });
+        .style("fill", function(d,i) { return colors[exits[i].color]; });
       
     var groupText = group.append("text")
         .attr("x", 6)
@@ -88,8 +90,9 @@ d3.json("thruway-2l-matrix.json", function(matrix) {
         .data(layout.chords)
       .enter().append("path")
         .classed({'chord':true})
-        .style("fill", function(d) { return exits[d.source.index].color; })
-        .attr("d", path);
+        .style("fill", function(d) { return colors[exits[d.source.index].color]; })
+        .attr("d", path)
+        .style("opacity",.75);
   
     chord.append("title").text("replace me!");
 
@@ -98,6 +101,13 @@ d3.json("thruway-2l-matrix.json", function(matrix) {
         return p.source.index != i
           && p.target.index != i;
         });
+
+      d3.selectAll(".fade").transition().duration(250).style("opacity",0);
+
+    }
+
+    function mouseout(d,i){
+        d3.selectAll(".fade").transition().duration(250).style("opacity",.75);
     }
   });
 })
