@@ -71,7 +71,7 @@ d3.json("thruway-2l-matrix.json", function(matrix) {
     var groupPath = group.append("path")
         .attr("id", function(d,i) { return "group" + i; })
         .attr("d", arc)
-        .style("fill", function(d,i) { return exits[i].Color; });
+        .style("fill", function(d,i) { return exits[i].color; });
       
     var groupText = group.append("text")
         .attr("x", 6)
@@ -79,7 +79,7 @@ d3.json("thruway-2l-matrix.json", function(matrix) {
   
     groupText.append("textPath")
         .attr("xlink:href", function(d,i) { return "#group" + i; })
-        .text(function(d,i) { return exits[i].Exit; });
+        .text(function(d,i) { return exits[i].exit; });
   
     // remove the labels that don't fit goes here
   
@@ -87,7 +87,7 @@ d3.json("thruway-2l-matrix.json", function(matrix) {
         .data(layout.chords)
       .enter().append("path")
         .classed({'chord':true})
-        .style("fill", function(d) { return exits[d.source.index].Color; })
+        .style("fill", function(d) { return exits[d.source.index].color; })
         .attr("d", path);
   
     chord.append("title").text("replace me!");
