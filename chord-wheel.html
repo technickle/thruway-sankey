@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<style>
+<head>
+  <title>NYS Thruway Traffic Visualization</title>
+  <style>
+    body {
+      font: 10px sans-serif;
+    }
 
-body {
-  font: 10px sans-serif;
-}
+    #circle circle {
+      fill: none;
+      pointer-events: all;
+    }
 
-#circle circle {
-  fill: none;
-  pointer-events: all;
-}
+    .group path {
+      fill-opacity: .4;
+    }
 
-.group path {
-  fill-opacity: .4;
-}
+    path.chord {
+      fill-opacity: .65
+      stroke: #000;
+      stroke-width: .25px;
+    }
 
-path.chord {
-  fill-opacity: .65
-  stroke: #000;
-  stroke-width: .25px;
-}
-
-#circle:hover path.fade {
-  display: none;
-}
-
-</style>
+    #circle:hover path.fade {
+      display: none;
+    }
+  </style>
+</head>
 <body>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
@@ -57,7 +58,6 @@ svg.append("circle")
 
 d3.json("thruway-2l-matrix.json", function(matrix) {
   d3.csv("thruway-exits.csv", function(exits) {
-    console.log(exits);
     layout.matrix(matrix);
   
     var group = svg.selectAll(".group")
