@@ -7,6 +7,15 @@
       font: 10px sans-serif;
       background:#000;
       text-align:center;
+      padding: 0;
+      margin: 0;
+    }
+    
+    header {
+      height: 2em;
+      background:#A2A2A2;
+      color:#262626;
+      font: 14px sans-serif;
     }
 
     #circle circle {
@@ -14,25 +23,27 @@
       pointer-events: all;
     }
 
-
     path.chord {
     }
 
     .outer:hover {
       cursor:pointer;
     }
-
-
+    
   </style>
 </head>
 <body>
+<header>
+  <p>BETA NYS Thruway Traffic Visualization by <a href="https://twitter.com/technickle">@technickle</a> and <a href="https://twitter.com/chris_whong">@chris_whong</a>. <a href="https://github.com/technickle/thruway-sankey/tree/gh-pages">Get the source code!</a></p>
+</header>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
 
 var width = 800,
     height = 800,
     innerRadius = Math.min(width, height) * .41,
-    outerRadius = innerRadius * 1.1;
+    outerRadius = innerRadius * 1.1,
+    chordOpacity = .8;
 
 var arc = d3.svg.arc()
     .innerRadius(innerRadius)
@@ -57,10 +68,10 @@ svg.append("circle")
     .attr("r", outerRadius);
 
 d3.json("thruway-2l-matrix.json", function(matrix) {
-  console.log(matrix);
   d3.csv("thruway-exits.csv", function(exits) {
     layout.matrix(matrix);
-  
+ 
+    // add the segments around the outside of the circle, each as a group  
     var group = svg.selectAll(".group")
       .data(layout.groups)
       .enter().append("g")
@@ -68,12 +79,12 @@ d3.json("thruway-2l-matrix.json", function(matrix) {
         .on("mouseover",mouseover)
         .on("mouseout",mouseout);
       
-    // group title would go here
+    // this text shows as a tooltip when the mouse is hovered
     group.append("title").text("replace me!");
   
     var groupPath = group.append("path")
         .attr("id", function(d,i) { return "group" + i; })
-        .attr("class","outer")
+        .classed({'outer':true})
         .attr("d", arc)
         .style("fill", function(d,i) { return colors[exits[i].color]; });
       
@@ -94,7 +105,7 @@ d3.json("thruway-2l-matrix.json", function(matrix) {
         .classed({'chord':true})
         .style("fill", function(d) { return colors[exits[d.source.index].color]; })
         .attr("d", path)
-        .style("opacity",.75);
+        .style("opacity",chordOpacity);
   
     chord.append("title").text("replace me!");
 
@@ -109,7 +120,7 @@ d3.json("thruway-2l-matrix.json", function(matrix) {
     }
 
     function mouseout(d,i){
-        d3.selectAll(".fade").transition().duration(250).style("opacity",.75);
+        d3.selectAll(".fade").transition().duration(250).style("opacity",chordOpacity);
     }
   });
 })
