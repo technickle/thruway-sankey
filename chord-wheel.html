@@ -22,9 +22,10 @@
       pointer-events: all;
     }
 
-    path.chord {
+    #circle:hover path.fade {
+      display: none;
     }
-
+ 
     .outer:hover {
       cursor:pointer;
     }
@@ -125,13 +126,10 @@ d3.json("thruway-2l-matrix.json", function(matrix) {
         return p.source.index != i
           && p.target.index != i;
         });
-
-      d3.selectAll(".fade").transition().duration(250).style("opacity",0);
-
     }
 
     function mouseout(d,i){
-        d3.selectAll(".fade").transition().duration(250).style("opacity",chordOpacity);
+      //d3.selectAll(".fade").classed({'fade':false});
     }
   });
 })
