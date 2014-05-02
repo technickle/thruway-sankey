@@ -12,7 +12,6 @@
     }
     
     header {
-      height: 2em;
       background:#A2A2A2;
       color:#262626;
       font: 14px sans-serif;
@@ -34,7 +33,7 @@
 </head>
 <body>
 <header>
-  <p>BETA NYS Thruway Traffic Visualization by <a href="https://twitter.com/technickle">@technickle</a> and <a href="https://twitter.com/chris_whong">@chris_whong</a>. <a href="https://github.com/technickle/thruway-sankey/tree/gh-pages">Get the source code!</a></p>
+  <p>NYS Thruway Passenger Car Trips in 2012 - BETA - Visualization by <a href="https://twitter.com/technickle">@technickle</a> and <a href="https://twitter.com/chris_whong">@chris_whong</a>, based upon <a href="http://bost.ocks.org/mike/uberdata/">this</a>. <a href="https://github.com/technickle/thruway-sankey/issues">Contribute</a> or <a href="https://github.com/technickle/thruway-sankey/tree/gh-pages">view the source code<a/>!</p>
 </header>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script>
@@ -112,7 +111,14 @@ d3.json("thruway-2l-matrix.json", function(matrix) {
         .attr("d", path)
         .style("opacity",chordOpacity);
   
-    chord.append("title").text("replace me!");
+    chord.append("title").text(function(d) {
+      return exits[d.source.index].exit 
+        + " → " + exits[d.target.index].exit
+        + ": " + formatNumber(d.source.value) + " trips"
+        + "\n" + exits[d.target.index].exit
+        + " → " + exits[d.source.index].exit
+        + ": " + formatNumber(d.target.value) + " trips";
+    });
 
     function mouseover(d,i) {
       chord.classed("fade", function(p) {
