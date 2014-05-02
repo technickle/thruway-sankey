@@ -44,6 +44,8 @@ var width = 800,
     innerRadius = Math.min(width, height) * .41,
     outerRadius = innerRadius * 1.1,
     chordOpacity = .8;
+    
+var formatNumber = d3.format("0,000d");
 
 var arc = d3.svg.arc()
     .innerRadius(innerRadius)
@@ -80,7 +82,10 @@ d3.json("thruway-2l-matrix.json", function(matrix) {
         .on("mouseout",mouseout);
       
     // this text shows as a tooltip when the mouse is hovered
-    group.append("title").text("replace me!");
+    // some rounding issues showing up at the moment
+    group.append("title").text(function(d,i) {
+      return "Exit " + exits[i].exit + ": " + exits[i].name + "; " +  formatNumber(d.value) + " entries";
+    });
   
     var groupPath = group.append("path")
         .attr("id", function(d,i) { return "group" + i; })
