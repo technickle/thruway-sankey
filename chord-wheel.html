@@ -39,10 +39,10 @@ var arc = d3.svg.arc()
     .outerRadius(outerRadius);
 
 var layout = d3.layout.chord()
-    .padding(.005)
+    .padding(.005);
 
 var path = d3.svg.chord()
-    .radius(innerRadius);
+    .radius(innerRadius - 1);
 
 var svg = d3.select("body").append("svg")
     .attr("width",width)
@@ -57,6 +57,7 @@ svg.append("circle")
     .attr("r", outerRadius);
 
 d3.json("thruway-2l-matrix.json", function(matrix) {
+  console.log(matrix);
   d3.csv("thruway-exits.csv", function(exits) {
     layout.matrix(matrix);
   
@@ -83,8 +84,9 @@ d3.json("thruway-2l-matrix.json", function(matrix) {
     groupText.append("textPath")
         .attr("xlink:href", function(d,i) { return "#group" + i; })
         .text(function(d,i) { return exits[i].exit; });
-  
-    // remove the labels that don't fit goes here
+        
+    groupText.filter(function(d, i) { return groupPath[0][i].getTotalLength() / 2 - 16 < this.getComputedTextLength(); })
+        .remove();  
   
     var chord = svg.selectAll(".chord")
         .data(layout.chords)

@@ -6,19 +6,26 @@ exit,name,segment,color
 19,Kingston - NY Route 28 - Kingston-Rhinecliff Bridge,1,0
 20,Saugerties - Woodstock - NY Route 32,1,0
 21,Catskill - Cairo - NY Route 23,1,0
+B1,Albany - Hudson - Rensselaer - I-90 - US Route 9,6,5
+B2,Taconic State Parkway - NY Route 295,6,5
+B3,Canaan Toll Barrier,6,5
+21B,Coxsackie - Ravena - US Route 9W - NY Route 81,1,0
 22,Selkirk - NY Routes 144 & 396,1,0
 23,Albany (Downtown) - Troy - Rensselaer - I-787 - US Route 9W,1,0
 24,Albany - Montreal - I-90 East - I-87 North,2,1
 25,Schenectady - I-890 - NY Routes 7 & 146,2,1
+25A,Schenectady - Binghamton - I-88 - NY Route 7,2,1
 26,Schenectady - Scotia - I-890 - NY Routes 5 & 5S,2,1
 27,Amsterdam - NY Route 30,2,1
 28,Fultonville - Fonda - NY Route 30A,2,1
 29,Canajoharie - Sharon Springs - NY Route 10,2,1
+29A,Little Falls - Dolgeville - NY Route 169,2,1
 30,Herkimer - Mohawk - NY Route 28,2,1
 31,Utica - I-790 - NY Routes 8 & 12,2,1
 32,Westmoreland - Rome - NY Route 233,2,1
 33,Verona - Rome - Oneida - NY Route 365,2,1
 34,Canastota - Oneida - Chittenango - NY Route 13,2,1
+34A,Syracuse - Chittenango - Oswego - I-481,2,1
 35,Syracuse - East Syracuse - NY Route 298,2,1
 36,Watertown - Binghamton - I-81,2,1
 37,Syracuse - Liverpool - Electronics Parkway,2,1
@@ -33,21 +40,14 @@ exit,name,segment,color
 46,Rochester - Corning - I-390,4,3
 47,Rochester - LeRoy - I-490 - NY Route 19,4,3
 48,Batavia - NY Route 98,4,3
+48A,Pembroke - Medina - NY Route 77,4,3
 49,Depew - Lockport - NY Route 78,4,3
 50,Williamsville Toll Barrier,4,3
 55,Lackawanna Toll Barrier,5,4
 56,Blasdell - Orchard Park - Mile Strip Road (NY Route 179),5,4
 57,Hamburg - East Aurora - NY Route 75,5,4
+57A,Eden - Angola,5,4
 58,"Silver Creek - Irving - NY Routes 5, 20 & 438",5,4
 59,Dunkirk - Fredonia - NY Route 60,5,4
 60,Westfield - Mayville - NY Route 394,5,4
 61,Ripley Toll Barrier,5,4
-21B,Coxsackie - Ravena - US Route 9W - NY Route 81,1,0
-25A,Schenectady - Binghamton - I-88 - NY Route 7,2,1
-29A,Little Falls - Dolgeville - NY Route 169,2,1
-34A,Syracuse - Chittenango - Oswego - I-481,2,1
-48A,Pembroke - Medina - NY Route 77,4,3
-57A,Eden - Angola,5,4
-B1,Albany - Hudson - Rensselaer - I-90 - US Route 9,6,5
-B2,Taconic State Parkway - NY Route 295,6,5
-B3,Canaan Toll Barrier,6,5
